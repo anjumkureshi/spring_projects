@@ -2,6 +2,7 @@ package com.ir.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OrderColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -40,10 +42,20 @@ public class TrainsDetails
 	@ListIndexBase(value= 1)
 	@Column(length=50 ,name="Passing_by_Stations")	
 	private List<String> passByStations;*/
+	
+	@OneToMany(targetEntity=Coaches.class,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="train_id",referencedColumnName="trainId")
+	private List<Coaches> coaches;   //List<Coaches> lis=List.of(cacehe);
 	@Column(name="Total_Distance")
 	private Long distance;
-	@Column(name="Train_Fare")
-	private Long fare;
+	/*@Column(name="Train_Fare")
+	private Long fare;*/
+	@ElementCollection(fetch=FetchType.EAGER)
+	@CollectionTable(name="stops_of_train",joinColumns = @JoinColumn(name="stops_id",referencedColumnName = "trainId"))
+	@OrderColumn(name="stop_index")
+	@ListIndexBase(value=1)
+	@Column(length = 50,name = "stops_of_train")
+	private List<String> stops_of_train;
 	public int getTrainId() {
 		return trainId;
 	}
@@ -87,13 +99,24 @@ public class TrainsDetails
 	public void setDistance(Long distance) {
 		this.distance = distance;
 	}
-	public Long getFare() {
+	/*public Long getFare() {
 		return fare;
 	}
 	public void setFare(Long fare) {
 		this.fare = fare;
 	}
-
-	
+	*/
+	public List<Coaches> getCoaches() {
+		return coaches;
+	}
+	public void setCoaches(List<Coaches> coaches) {
+		this.coaches = coaches;
+	}
+	public List<String> getStops_of_train() {
+		return stops_of_train;
+	}
+	public void setStops_of_train(List<String> stops_of_train) {
+		this.stops_of_train = stops_of_train;
+	}
 	
 }

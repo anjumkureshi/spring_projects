@@ -1,7 +1,6 @@
 package com.ir.entity;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,6 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="IndianRailways_IR")
 public class UserDetails {
+	
 	@Column(length = 40)
 	private String fullname;
 

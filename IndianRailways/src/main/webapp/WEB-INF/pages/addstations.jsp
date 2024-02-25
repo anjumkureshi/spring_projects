@@ -29,7 +29,7 @@ border-radius:10px;
 </head>
 
 <body>
-<form:form action="add_stations" modelAttribute="addstations">
+<form:form modelAttribute="addstations">
 		<br>
 		<br>
 		<dl class="form_elements">
@@ -48,6 +48,8 @@ border-radius:10px;
 <dd><form:checkboxes items="${train_names}" path="passByStations"/> </dd>
         <dd><button class="btn btn-warning" type="submit">Add Station</button>&nbsp;
         <button class="btn btn-danger" type="reset">Cancel</button>
+        <a href="edit_stations">Edit stations</a>
+        
         </dd>
         </dl>
 		<h4>${msg}</h4>

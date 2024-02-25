@@ -33,11 +33,12 @@ public class StationsDetails
 	private Long stdCode;
 	
 	@ElementCollection(fetch=FetchType.EAGER)
-	@CollectionTable(name = "train_passing_bystation",joinColumns = @JoinColumn(name="tns_id",referencedColumnName = "stdId"))
+	@CollectionTable(name = "train_passing_bystation",joinColumns = @JoinColumn(name="std_id",referencedColumnName = "stdId"))
 	@OrderColumn(name="station_index")
 	@ListIndexBase(value= 1)
-	@Column(length=50 ,name="Passing_by_Stations")	
+	@Column(length=50 ,name="Train_Passing_by_Stations")	
 	private List<String> passByStations;
+	
 	
 	public Long getStdId() {
 		return stdId;

@@ -111,6 +111,7 @@ public class JPAConfig
 		props.setProperty("hibernate.hbm2ddl.auto", "update");
 		props.setProperty("hibernate.show_sql", "true");
 		props.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+		props.setProperty("hibernate.enable_lazy_load_no_trans","true");
 		return props;
 	}
 	

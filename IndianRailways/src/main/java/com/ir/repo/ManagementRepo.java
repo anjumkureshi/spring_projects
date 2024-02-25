@@ -11,5 +11,7 @@ public interface ManagementRepo extends JpaRepository<ManagementDetails,String >
 {
 
 	public Optional<ManagementDetails> findByUsernameAndPassword(String username,String password);
+	
+	
 
 }

@@ -24,7 +24,6 @@
             padding: 15px;
             font-family: Arial, Helvetica, sans-serif;
             align-items: center;
-            opacity:0.5;
 
         }
         nav span{
@@ -44,7 +43,7 @@
         border: 2px solid #333;
         width:550px;
         height:400px;
-        margin-left:65px;
+        margin-left:450px;
         margin-top:99px;
         align-items: center;
         background-color: white;
@@ -132,13 +131,17 @@
        .form_elements{
        padding: 25px;
        }
+   #fade-in-out1{
+               opacity: 0;
+            animation: fadeInOut 2s ease-in-out infinite;
    
+   }
    </style>
 </head>
 <body>
 <header>
  <div class="image">
-  <img src="images/secondry.png" >
+  <img src="C:\Users\Ammi\git\spring_projects\IndianRailways\src\main\webapp\images\logo_one.jpg" alt="logo" >
   <span id="IR">Indian Railways</span>
  </div>
 <div>
@@ -155,24 +158,28 @@
 </header>  
 
 <div class="parentdiv">
+
 	<form:form action="login" modelAttribute="login_Mattribute">
 		<br>
 		<br>
 		<dl class="form_elements">
+		<p  style="color:darkgreen"id=fade-in-out>${updatemsg}</p>
+		
 		<h2><span>User Login</span></h2>
         <dt>User Name</dt>
         <dd><form:input path="username" class="form-control"/></dd>
         <dt>Password</dt>
-        <dd><form:input path="password" class="form-control"/></dd>
+        <dd><form:password path="password" class="form-control"/></dd>
         
         <dd><button class="btn btn-success" type="submit">Login</button>&nbsp;
         <button class="btn btn-danger" type="reset">Cancel</button>
         &nbsp;<a href="register"><span>New user?Register here...</span></a>
         </dd>
-   <h4> ${loginmsg }</h4>
+   <h4>${loginmsg }</h4>
         </dl>
 	</form:form>
 
+</div>
 </div>
 <div>
            <div class="wave"></div>

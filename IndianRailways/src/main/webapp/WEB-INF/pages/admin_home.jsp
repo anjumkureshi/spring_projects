@@ -39,13 +39,16 @@
 <a href="addstations">Add new Stations</a>
 </div>
 <div>
-<a href="queries">View Passengers Queries</a>
+<a href="view_queries">View Passengers Queries</a>
 </div>
 <div>
 <a href="emergency">Emergency</a>
 </div>
 <div>
 <a href="helpdesk">Help Desk</a>
+</div>
+<div>
+<a href="setprices_listofTrains">Set Ticket price for Trains</a>
 </div>
 </body>
 </html>

@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ir.entity.QueriesTable;
 import com.ir.entity.StationsDetails;
+import com.ir.entity.TrainsDetails;
 import com.ir.repo.IStationRepo;
 import com.ir.repo.ITrainMgmtRepo;
+import com.ir.repo.IUserQueryRepo;
 import com.ir.repo.ManagementRepo;
 
 @Service
@@ -22,6 +25,9 @@ public class ManagementService  implements IMgmtService
 	
 	@Autowired
 	ITrainMgmtRepo TMgRepo;
+	
+	@Autowired
+	IUserQueryRepo queryRepo;
 
 	
 	//public String createuser(ManagementRequest request) {
@@ -79,7 +85,26 @@ public class ManagementService  implements IMgmtService
 		return listOfTrainNames;
 	}
 
- 
+	@Override
+	public List<QueriesTable> fetchListofQueries() 
+	{
+	List<QueriesTable>queries=queryRepo.findAll();
+
+		return queries;
+	}
+	@Override
+	public List<StationsDetails> fetchAllStationDetails() {
+		// TODO Auto-generated method stub
+		List<StationsDetails> station_details=SRepo.findAll();
+		return station_details;
+	}
+
+	@Override
+	public List<TrainsDetails> fetchAllTrainDetails() {
+		return null;
+	}
+
+	 
 
 	
 }

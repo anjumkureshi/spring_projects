@@ -15,9 +15,9 @@
 		<dl class="form_elements">
 		<h2><span>Search Your Trains</span></h2>
         <dt>From</dt>
-        <dd><form:input path="stationName" class="form-control"/></dd>
+        <dd><form:input path="fromStation" class="form-control"/></dd>
         <dt>To</dt>
-        <dd><form:input path="stationName" class="form-control"/></dd>
+        <dd><form:input path="toStation" class="form-control"/></dd>
         <dd><button class="btn btn-success" type="submit">Submit</button>&nbsp;
         <button class="btn btn-danger" type="reset">Cancel</button>
         </dd>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 <style type="text/css">
 
-        form
+        /* form
         {
         border: 2px solid #333;
         width:550px;
@@ -20,13 +20,10 @@
         margin-top:99px;
         align-items: center;
         background-color: white;
-        }
+        } */
         #form1{
-        border: 2px solid #333;
-        width:550px;
-        height:600px;
-        margin-left:65px;
-        margin-top:99px;
+        width:100vw;
+        height:100vh;
         align-items: center;
         background-color: white;
         }
@@ -55,18 +52,21 @@
       </dd>
 <dt>Enter Train Ends At</dt>
 <dd><form:select path="ending" class="form-control">
-     <form:options items="${stations_names }"/>
+     <form:options items="${stations_names}"/>
      </form:select>
+     <form:input path="ending" class="form-control"/>
  </dd>
- <!-- <dt>Select the Station train Passing by</dt>
-<dd><form:checkboxes items="${stations_names}" path="passByStations"/> </dd> -->
 <dt>Enter Total Distance covered by train</dt>
 
 <dd><form:input path="distance" class="form-control"/> </dd>
-<dt>Enter Ticket Fare from start to end</dt>
-<dd><form:input path="fare" class="form-control"/> </dd>
+<dt>Enter Stops for the Train</dt>
+<dd><form:checkboxes items="${stations_names}" path="stops_of_train"/> </dd>
+<dt>Enter Coaches</dt>
+<dd><button class=" btn btn-primary" onclick="cochesModel()"></button></dd>
   <dd><button class="btn btn-success" type="submit">Add Trains</button>&nbsp;
  <button class="btn btn-danger" type="reset">Cancel</button></dd>
+        <dd> <a href="edit_trains">Edit Train Details</a></dd>
+ 
 </dl>
 </form:form> 
 </div>

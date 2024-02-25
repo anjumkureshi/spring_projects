@@ -30,7 +30,7 @@ public class ManagementDetails
 		@Column(length = 40,name="DOB")
 		private LocalDate dob;
 		
-		@Column(length = 40, unique = true, nullable = false,name="username")
+		@Column(length = 40, unique = true, nullable = false,name="Username")
 		private String username;
 
 		@Column(length = 40,name="Password")

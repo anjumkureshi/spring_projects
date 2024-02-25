@@ -55,7 +55,7 @@
       </dd>
 <dt>Enter Train Ends At</dt>
 <dd><form:select path="end" class="form-control">
-     <form:options items="${stations_names }"/>
+     <form:options items="${stations_names}"/>
      </form:select>
  </dd>
   <dd><button class="btn btn-success" type="submit">Add Trains</button>&nbsp;
